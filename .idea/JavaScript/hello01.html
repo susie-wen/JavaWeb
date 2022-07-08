@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+      var arr=[];//定义一个数组
+      arr[0]=12;
+      arr[2]="abc";
+      //JS语言中的数组，只要我们通过数组下标赋值，那么最大的下标值，就会自动给数组扩容
+      alert(arr.length);
+      alert(arr[1]);//结果为undefined，因为JS当中只要未赋值默认就是undefined
+
+      //1、定义无参函数
+      function fun(){
+          alert("无参函数被调用");
+      }
+
+      //3、定义有参函数
+      function fun1(a,b){
+          alert("有参函数被调用");
+      }
+
+      //4、定义带有返回值的函数
+      function fun2(a,b) {
+          return a+b;
+      }
+
+      alert(fun2(10,30));
+      //1、定义无参函数
+      var fun=function (){
+          alert("无参函数");
+      }
+      //2、定义有参函数
+      var fun2=function (){
+          alert("有参函数a="+a+",b="+b);
+      }
+      //3、定义带有返回值的函数
+      var fun3=function (num1,num2) {
+          return num1+num2;
+      }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

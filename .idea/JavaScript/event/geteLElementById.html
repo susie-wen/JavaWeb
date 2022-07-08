@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+    function onclickFun(){
+      //当我们要操作一个标签的时候，一定要先获取这个标签对象
+      var usernameObj=document.getElementById("username");
+      // alert( usernameObj);得到的结果：[object HTMLInputElement]，就是一个dom对象
+      var usernameText=usernameObj.value;//这里得到的值是随着输入框里的值变化而变化的
+      //验证字符串符合某个规则，需要使用正则表达式
+      var patt=/^\w{5,12}$/;
+
+      var usernameSpanObj=document.getElementById("usernameSpan");
+      //innerHTML：表示起始标签和结束标签里面的内容
+      //innerHTML：这个属性可读可写
+      // alert(usernameSpanObj.innerHTML);
+      usernameSpanObj.innerHTML="你dbcwiwb";
+
+      /**
+       * test()方法：用于测试某个字符串是否匹配我的规则
+       * 匹配就返回true,不匹配就返回false
+       */
+      if(patt.test(usernameText)){
+          usernameSpanObj.innerHTML="用户名合法！";
+          usernameSpanObj.innerHTML="<img src=\"right.jpg\" width=\"18\" height=\"18\">";
+      }else{
+          usernameSpanObj.innerHTML="用户名不合法！";
+          usernameSpanObj.innerHTML="<img src=\"wrong.jpg\" width=\"18\" height=\"18\">";
+      }
+    }
+  </script>
+</head>
+<body>
+    用户名：<input type="text" id="username" value="susie"/>
+    <span id="usernameSpan" style="color:red;">
+    </span>
+    <button onclick="onclickFun()">校验</button>
+</body>
+</html>
