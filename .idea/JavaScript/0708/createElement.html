@@ -3,8 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script>
+        window.onload=function (){
+            //需求：使用JS来创建HTML标签，并显示在页面上
+            //例如，标签的内容是<div>today is today</div>
+            var divObj=document.createElement("div");//此时在内存当中创建了<div></div>
+            //添加子元素
+            document.cre
+            divObj.innerHTML="today is today";//此时已经有文字了，但是是显示在内存当中
+            document.body.appendChild(divObj);//这是一个语句，当按顺序读取的使用会比body里面的内容先读，因此要将其变成放到页面
+        }
+    </script>
 </head>
 <body>
-
 </body>
 </html>
